@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kangmin Cho | Energy Systems & Machine Learning Researcher</title>
+  <meta name="description" content="Academic portfolio of Kangmin Cho, Graduate Researcher in Systems Engineering at Cornell University." />
+
+  <!-- Google Fonts: Inter (UI/Body) & Source Serif 4 (Headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+  <!-- MathJax for rendering inline equations -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --accent: #b31b1b; /* Cornell Carnelian */
+      --accent-hover: #8f1414;
+      --border: #e2e8f0;
+      --tag-bg: #f1f5f9;
+      --tag-text: #1e293b;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky Top Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Main Container */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 4.5rem;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* Hero / Bio Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 210px;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .bio-text {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .link-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.45rem 0.95rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      background: var(--bg-secondary);
+      transition: all 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .btn:hover:not(.btn-primary) {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .profile-frame {
+      width: 210px;
+      height: 240px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .profile-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 3-Column Research Pillars */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .pillar-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .pillar-scale {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* Project Cards */
+    .project-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 1.75rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .project-card:last-child {
+      border-bottom: none;
+    }
+
+    .project-fig {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      overflow: hidden;
+      min-height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .project-fig img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .project-meta {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .project-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-content p {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.65rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    /* Publications List */
+    .pub-list {
+      list-style: none;
+    }
+
+    .pub-item {
+      margin-bottom: 1.1rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--border);
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+    }
+
+    .pub-item strong {
+      color: var(--text-primary);
+    }
+
+    .pub-title {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .profile-frame {
+        order: -1;
+        width: 160px;
+        height: 185px;
+      }
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        gap: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#about" class="brand">Kangmin Cho</a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#pillars">Framework</a></li>
+          <li><a href="#projects">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Bio Section -->
+    <section id="about" class="hero">
+      <div>
+        <h1>Kangmin Cho</h1>
+        <!--[cite: 1, 29] -->
+        <div class="subtitle">Graduate Researcher in Systems Engineering &bull; Cornell University</div>
+        <!--[cite: 2, 5, 48, 50, 81, 82] -->
+        <p class="bio-text">
+          I am a computational energy systems researcher investigating the intersection of <strong>machine learning, stochastic uncertainty modeling, and macro-scale energy policy evaluation</strong>. My research combines deep generative time-series modeling, retrieval-augmented language models, geospatial remote sensing, and regional grid simulation to design physically resilient and institutionally verifiable decarbonization pathways.
+        </p>
+        <!--[cite: 30, 50, 81] -->
+        <p class="bio-text">
+          Previously, I conducted circular economy and sustainability assessment research on computing hardware and semiconductor materials at the Commodity Ecology Research Lab (Stony Brook University / SUNY Korea). I am currently applying to Ph.D. programs for Fall 2027.
+        </p>
+        <!--[cite: 1] -->
+        <div class="link-buttons">
+          <a href="assets/Kangmin_Cho_CV.pdf" class="btn btn-primary" target="_blank">Curriculum Vitae (PDF)</a>
+          <a href="mailto:kc2344@cornell.edu" class="btn">kc2344@cornell.edu</a>
+          <a href="https://scholar.google.com/" class="btn" target="_blank">Google Scholar</a>
+          <a href="https://github.com/" class="btn" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/" class="btn" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="profile-frame">
+        <img src="assets/profile.jpg" alt="Kangmin Cho" onerror="this.style.display='none'; this.parentElement.innerHTML='Upload headshot to<br><code>assets/profile.jpg</code>';" />
+      </div>
+    </section>
+
+    <!-- Research Framework / Pillars -->
+    <section id="pillars">
+      <h2>Multi-Scale Energy Decarbonization Framework</h2>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-scale">1. Supply &amp; Asset Scale</div>
+          <h3>Stochastic Renewables</h3>
+          <!--[cite: 44, 50, 71] -->
+          <p>Capturing high-resolution weather uncertainty and physical conversion bounds via deep generative models to de-risk clean energy and green hydrogen infrastructure sizing.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-scale">2. Regional Grid Scale</div>
+          <h3>Macro-Policy Feasibility</h3>
+          <!--[cite: 81] -->
+          <p>Stress-testing state decarbonization mandates in LEAP against surging 24/7 data center compute loads and winter heating and transport electrification peaks.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-scale">3. Governance &amp; Spatial Scale</div>
+          <h3>Verifiable Auditing</h3>
+          <!--[cite: 2, 5, 82] -->
+          <p>Cross-examining corporate ESG disclosures and physical fossil fuel footprints using retrieval-augmented LLMs and multi-decade satellite remote sensing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Projects -->
+    <section id="projects">
+      <h2>Selected Research Projects</h2>
+
+      <!-- Project 1 -->
+      <article class="project-card">
+        <div class="project-fig">
+          <img src="assets/project1_cgan.png" alt="cGAN-MILP Green Hydrogen Architecture" onerror="this.style.display='none'; this.parentElement.innerHTML='Save Fig. 2 or Fig. 6 as<br><code>assets/project1_cgan.png</code>';" />
+        </div>
+        <div class="project-content">
+          <!--[cite: 29, 44, 72] -->
+          <div class="project-meta">Supply-Side Uncertainty &bull; Co-First Author &amp; Lead ML Modeler</div>
+          <h3>Physics-Informed Generative Modeling for Green Hydrogen Systems Under Renewable Uncertainty</h3>
+          <!--[cite: 30, 31, 32, 47, 50, 51, 52] -->
+          <p>
+            Conventional techno-economic and life cycle assessments of power-to-X systems rely on single historical years or Typical Meteorological Year (TMY) baselines that smooth out interannual weather anomalies. I developed a conditional Generative Adversarial Network (cGAN) trained on 10 years of hourly meteorological data (87,673 observations, 2015–2024) in West Texas to synthesize 24-hour wind and solar power ensembles. The architecture integrates two-layer stacked LSTMs with residual connections, a factorized zero-gate and power-predictor branch ($\hat{P}^i(t) = \phi_{gate}^i \cdot \phi_{predictor}^i$), a four-way pooled discriminator, and post-hoc range clamping for wind turbine cut-in ($3\text{ m/s}$) and cut-out ($22\text{ m/s}$) thresholds.
+          </p>
+          <!--[cite: 35, 53, 54, 63, 64, 65, 66, 71] -->
+          <p>
+            Across 30 independent runs, the cGAN achieved high predictive accuracy ($R^2 = 0.966$ for PV; $0.931$ for wind) and outperformed the Sandia TMY baseline in wind power Wasserstein distance ($30.440$ vs. $31.856$). Propagating the 30 synthetic annual scenarios through a two-phase $\epsilon$-constraint MILP optimization revealed that while $\text{LCOH}$ ($0.92\text{–}0.97\text{ USD/kg H}_2$) remained tight, optimal solar sizing varied by <strong>35.6%</strong>—exposing substantial sizing risks masked by deterministic TMY planning.
+          </p>
+          <div class="tags">
+            <span class="tag">PyTorch</span>
+            <span class="tag">Stacked LSTM cGAN</span>
+            <span class="tag">Uncertainty Quantification</span>
+            <span class="tag">Green Hydrogen</span>
+            <span class="tag">MILP / Gurobi</span>
+            <span class="tag">TEA &amp; LCA</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card">
+        <div class="project-fig">
+          <img src="assets/project2_leap.png" alt="NYS Grid Decarbonization LEAP Scenarios" onerror="this.style.display='none'; this.parentElement.innerHTML='Save LEAP diagram as<br><code>assets/project2_leap.png</code>';" />
+        </div>
+        <div class="project-content">
+          <!--[cite: 81] -->
+          <div class="project-meta">Regional Grid &amp; Policy Planning &bull; Co-Lead Researcher</div>
+          <h3>NYS Grid Decarbonization Under Emerging Load: LEAP Scenario Assessment of CLCPA Feasibility</h3>
+          <!--[cite: 81] -->
+          <p>
+            New York State's Climate Leadership and Community Protection Act (CLCPA) mandates 70% renewable electricity by 2030 and a 60% emissions reduction by 2040. However, rapid growth in inflexible 24/7 data center loads is colliding with building heat pump and electric vehicle adoption, threatening both clean energy mandates and winter peak reliability.
+          </p>
+          <!--[cite: 81] -->
+          <p>
+            I co-designed this macro-energy scenario modeling study in LEAP (base year 2023), integrating NYISO zonal load baselines and interconnection queues, NYSERDA renewable pipelines, NYC Local Law 84 monthly building benchmarking, U.S. EIA sector fuel trajectories, and NREL ATB technology cost curves. Across five scenarios (<em>Baseline, Data Center Growth, High Electrification, Accelerated Renewables,</em> and <em>Integrated Mitigation</em>), the model evaluates generation mix shifts, winter installed reserve margins, 100-year GWP, and the marginal system cost of data center integration.
+          </p>
+          <div class="tags">
+            <span class="tag">LEAP</span>
+            <span class="tag">Macro-Energy Modeling</span>
+            <span class="tag">CLCPA Policy Analysis</span>
+            <span class="tag">NYISO Grid Reliability</span>
+            <span class="tag">Data Center Demand</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card">
+        <div class="project-fig">
+          <img src="assets/project3_rag.png" alt="RAG-LLM ESG Assurance Framework" onerror="this.style.display='none'; this.parentElement.innerHTML='Save Fig. 1 or Fig. 2 as<br><code>assets/project3_rag.png</code>';" />
+        </div>
+        <div class="project-content">
+          <!--[cite: 1, 2, 10] -->
+          <div class="project-meta">Institutional Governance &bull; First Author &amp; System Architect</div>
+          <h3>AI-Enabled Sustainability Auditing: A Dual-Corpus RAG-LLM Framework in the Energy Sector</h3>
+          <!--[cite: 2, 4, 5, 10, 12, 13, 14, 15, 16, 25] -->
+          <p>
+            Manual ESG assurance is slow and vulnerable to inter-rater variance, whereas standalone LLMs suffer from parametric hallucinations that undermine audit traceability. As first author, I architected a six-layer, dual-corpus Retrieval-Augmented Generation (RAG) framework to audit 732 sustainability reports from 99 global oil and gas firms (2014–2023) against 16 qualitative indicators in the GRI 11 Oil and Gas Sector Standard. The system parses PDFs into hierarchical JSON via <code>Docling</code>, embeds 256-token sentence chunks (20-token overlap) using <code>stella_en_1.5B_v5</code>, and performs adaptive neighbor context expansion ($E_i = \{c_{i-w}, \dots, c_{i+w}\}$).
+          </p>
+          <!--[cite: 2, 4, 5, 17, 18, 20, 21, 23] -->
+          <p>
+            To guarantee verifiable attribution, I formulated an evidence-constrained 0–5 ordinal scoring specification paired with a deterministic post-generation citation validator that zeroes out unsupported claims, benchmarked via Recall@K, MRR@K, LLM-as-a-Judge (Relevance, Faithfulness, Alignment), and Negative Rejection Rate. Empirical audits expose widespread "rhetorical decoupling" between corporate climate narratives and verifiable KPIs.
+          </p>
+          <div class="tags">
+            <span class="tag">RAG &amp; LLMs</span>
+            <span class="tag">Docling PDF Parsing</span>
+            <span class="tag">Stella Embeddings</span>
+            <span class="tag">GRI 11 ESG Assurance</span>
+            <span class="tag">Greenwashing Detection</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card">
+        <div class="project-fig">
+          <img src="assets/project4_gis.png" alt="Pennsylvania Shale Gas NDVI Spatial Audit" onerror="this.style.display='none'; this.parentElement.innerHTML='Save Fig. 3 or Fig. 4 as<br><code>assets/project4_gis.png</code>';" />
+        </div>
+        <div class="project-content">
+          <!--[cite: 82] -->
+          <div class="project-meta">Spatial &amp; Physical Ground-Truthing &bull; Sole Author</div>
+          <h3>Environmental Audit of Shale Gas Infrastructure: A Multi-County Study in Pennsylvania</h3>
+          <!--[cite: 82, 83, 84, 85, 96] -->
+          <p>
+            Complementing corporate text auditing with physical ground-truthing, I conducted a spatiotemporal remote sensing audit of unconventional Marcellus Shale natural gas infrastructure across Washington, Bradford, and Susquehanna counties in Pennsylvania. Using Google Earth Engine, I processed a 23-year summer baseline (2003–2025) of 30m Landsat 5/9 surface reflectance and thermal imagery to compute long-term vegetation ($\Delta\text{NDVI}$) and land surface temperature ($\Delta\text{LST}$) shifts.
+          </p>
+          <!--[cite: 82, 84, 85] -->
+          <p>
+            Integrating geospatial records for 6,455 unconventional wells and 127 local pipelines in QGIS and ArcGIS Pro with USGS NLCD 2021 binary forest masks and 60m concentric Euclidean buffers (0–300m), the analysis revealed acute forest degradation within 60m of well pads ($\Delta\text{NDVI}$ of $-0.21\text{ to }-0.24$) and contrasting logarithmic recovery trajectories between legacy production zones and newer drilling frontiers.
+          </p>
+          <div class="tags">
+            <span class="tag">Google Earth Engine</span>
+            <span class="tag">ArcGIS Pro &amp; QGIS</span>
+            <span class="tag">Landsat 5/9 Remote Sensing</span>
+            <span class="tag">Spatial Statistics</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Publications & Manuscripts -->
+    <section id="publications">
+      <h2>Publications &amp; Working Manuscripts</h2>
+      <ul class="pub-list">
+        <!--[cite: 29, 44] -->
+        <li class="pub-item">
+          <strong>Cho, K.</strong><sup>&dagger;</sup>, Kim, M.<sup>&dagger;</sup>, Sun, Z., Charles, M., &amp; Sy, C. L. (Under Review). <span class="pub-title">A cGAN-MILP framework for renewable-powered hydrogen system under renewable uncertainty.</span> (<sup>&dagger;</sup>Co-first authors).
+        </li>
+        <!--[cite: 1, 2] -->
+        <li class="pub-item">
+          <strong>Cho, K.</strong>, Zhang, Y., et al. (In Preparation). <span class="pub-title">AI-Enabled Sustainability Auditing: A RAG-Enhanced LLM Framework in the Energy Sector.</span>
+        </li>
+        <li class="pub-item">
+          <strong>Cho, K.</strong>, &amp; Whitaker, M. (Book Chapter). <span class="pub-title">Computer Hardware, Capacitors, and Semiconductor Choices toward a Circular Economy.</span> In <em>Relinking Eden: The Best Material and Organizational Choices to Accelerate a Circular Economy</em> (Springer Nature SDG Series).
+        </li>
+        <li class="pub-item">
+          Jung, K., Lee, M., Lee, Y., Park, J., <strong>Cho, K.</strong>, &amp; Dreamson, N. (2022). <span class="pub-title">Qualitative Approaches to Evaluating Social Media Influencers: A Case-Based Literature Review.</span> <em>International Journal of Electronic Commerce Studies</em>.
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <!--[cite: 1, 29] -->
+    &copy; 2026 Kangmin Cho &bull; Hosted on GitHub Pages
+  </footer>
+
+</body>
+</html>
