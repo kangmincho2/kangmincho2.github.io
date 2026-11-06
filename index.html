@@ -374,7 +374,7 @@
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#pillars">Framework</a></li>
+          <li><a href="#pillars">Threads</a></li>
           <li><a href="#projects">Research</a></li>
           <li><a href="#publications">Publications</a></li>
         </ul>
@@ -391,11 +391,11 @@
         <div class="subtitle">Graduate Researcher in Systems Engineering &bull; Cornell University</div>
         <!--[cite: 2, 5, 48, 50, 81, 82] -->
         <p class="bio-text">
-          I am a computational energy systems researcher investigating the intersection of <strong>machine learning, stochastic uncertainty modeling, and macro-scale energy policy evaluation</strong>. My research combines deep generative time-series modeling, retrieval-augmented language models, geospatial remote sensing, and regional grid simulation to design physically resilient and institutionally verifiable decarbonization pathways.
+          I am a computational energy systems researcher working on how machine learning and scenario modeling can make uncertainty explicit in energy transition decisions. My work covers from renewable supply and hydrogen system design, to state-level grid planning and the verification of sustainability claims. In particular, my core work includes deep generative modeling of renewable power.
         </p>
         <!--[cite: 30, 50, 81] -->
         <p class="bio-text">
-          Previously, I conducted circular economy and sustainability assessment research on computing hardware and semiconductor materials at the Commodity Ecology Research Lab (Stony Brook University / SUNY Korea).
+           Previously, I conducted circular economy and sustainability assessment research on computing hardware and semiconductor materials at the Commodity Ecology Research Lab (Stony Brook University / SUNY Korea).
         </p>
         <!--[cite: 1] -->
         <div class="link-buttons">
@@ -412,27 +412,27 @@
       </div>
     </section>
 
-    <!-- Research Framework / Pillars -->
+    <!-- Research Pillars -->
     <section id="pillars">
-      <h2>Multi-Scale Energy Decarbonization Framework</h2>
+      <h2>Research Threads</h2>
       <div class="pillars-grid">
         <div class="pillar-card">
           <div class="pillar-scale">1. Supply &amp; Asset Scale</div>
-          <h3>Stochastic Renewables</h3>
+          <h3>Uncertainty in renewable supply</h3>
           <!--[cite: 44, 50, 71] -->
-          <p>Capturing high-resolution weather uncertainty and physical conversion bounds via deep generative models to de-risk clean energy and green hydrogen infrastructure sizing.</p>
+          <p>Generative scenario models of wind and solar power for hydrogen system design.</p>
         </div>
         <div class="pillar-card">
           <div class="pillar-scale">2. Regional Grid Scale</div>
-          <h3>Macro-Policy Feasibility</h3>
+          <h3>Policy feasibility under emerging load</h3>
           <!--[cite: 81] -->
-          <p>Stress-testing state decarbonization mandates in LEAP against surging 24/7 data center compute loads and winter heating and transport electrification peaks.</p>
+          <p>LEAP scenarios testing NYS decarbonization mandates against data center and electrification growth.</p>
         </div>
         <div class="pillar-card">
           <div class="pillar-scale">3. Governance &amp; Spatial Scale</div>
-          <h3>Verifiable Auditing</h3>
+          <h3>Verification of sustainability claims</h3>
           <!--[cite: 2, 5, 82] -->
-          <p>Cross-examining corporate ESG disclosures and physical fossil fuel footprints using retrieval-augmented LLMs and multi-decade satellite remote sensing.</p>
+          <p>A RAG-LLM audit of corporate ESG text and a satellite audit of physical infrastructure footprints.</p>
         </div>
       </div>
     </section>
@@ -449,22 +449,20 @@
         <div class="project-content">
           <!--[cite: 29, 44, 72] -->
           <div class="project-meta">Supply-Side Renewables Uncertainty &bull; Co-First Author</div>
-          <h3>Physics-Informed Generative Modeling for Green Hydrogen Systems Under Renewable Uncertainty</h3>
+          <h3>Generative Scenarios for Green Hydrogen Under Renewable Uncertainty</h3>
           <!--[cite: 30, 31, 32, 47, 50, 51, 52] -->
           <p>
-            Conventional techno-economic and life cycle assessments of power-to-X systems rely on single historical years or Typical Meteorological Year (TMY) baselines that smooth out interannual weather anomalies. I developed a conditional Generative Adversarial Network (cGAN) trained on 10 years of hourly meteorological data (87,673 observations, 2015–2024) in West Texas to synthesize 24-hour wind and solar power ensembles. The architecture integrates two-layer stacked LSTMs with residual connections, a factorized zero-gate and power-predictor branch ($\hat{P}^i(t) = \phi_{gate}^i \cdot \phi_{predictor}^i$), a four-way pooled discriminator, and post-hoc range clamping for wind turbine cut-in ($3\text{ m/s}$) and cut-out ($22\text{ m/s}$) thresholds.
+            Techno-economic and life cycle assessments of power-to-X systems typically use a single historical year or a Typical Meteorological Year (TMY), which hides interannual variability. I led the cGAN component of a cGAN-MILP framework that generates synthetic 24-hour wind and solar profiles conditioned on temperature, wind speed, and irradiance. It is trained on 10 years of hourly West Texas data (87,673 observations, 2015-2024). The architecture combines two-layer stacked LSTMs with residual connections, a zero-gate and power-predictor factorization ($\hat{P}^i(t) = \phi_{gate}^i \cdot \phi_{predictor}^i$) that represents exact zeros, and a four-way pooled discriminator. A post-hoc correction enforces turbine cut-in ($3\text{ m/s}$) and cut-out ($22\text{ m/s}$) limits.
           </p>
           <!--[cite: 35, 53, 54, 63, 64, 65, 66, 71] -->
           <p>
-            Across 30 independent runs, the cGAN achieved high predictive accuracy ($R^2 = 0.966$ for PV; $0.931$ for wind) and outperformed the Sandia TMY baseline in wind power Wasserstein distance ($30.440$ vs. $31.856$). Propagating the 30 synthetic annual scenarios through a two-phase $\epsilon$-constraint MILP optimization revealed that while $\text{LCOH}$ ($0.92\text{–}0.97\text{ USD/kg H}_2$) remained tight, optimal solar sizing varied by <strong>35.6%</strong>—exposing substantial sizing risks masked by deterministic TMY planning.
+            My contributions include extending the training record to a decade, revising the output layers and activation functions, hyperparameter sensitivity analysis, 30-seed reproducibility runs, and the validation figures. Across 30 independently seeded runs, held-out $R^2$ was $0.90 \pm 0.08$ (PV) and $0.83 \pm 0.14$ (wind). The ensemble median tracks the TMY while the 5th-95th percentile band exposes interannual spread a single year cannot show. PV distributions matched closely ($\text{KS} = 0.275$), wind agreement was weaker ($\text{KS} = 0.275$). Propagating the ensemble through a two-phase $\epsilon$-constraint MILP developed by my co-author, $\text{LCOH}$ stayed tight ($0.92\text{–}0.97\text{ USD/kg H}_2$) while GWP spanned $1.56\text{-}1.78 \text{CO}_2\text{eq./kg} \text{H}_2$ and the optimal solar fraction varied by 35.6% (coefficient of variation), showing that single-profile analyses can understate design variability.
           </p>
           <div class="tags">
             <span class="tag">PyTorch</span>
             <span class="tag">Stacked LSTM cGAN</span>
             <span class="tag">Uncertainty Quantification</span>
             <span class="tag">Green Hydrogen</span>
-            <span class="tag">MILP / Gurobi</span>
-            <span class="tag">TEA &amp; LCA</span>
           </div>
         </div>
       </article>
@@ -472,19 +470,19 @@
       <!-- Project 2 -->
       <article class="project-card">
         <div class="project-fig">
-          <img src="assets/project2_leap.png" alt="NYS Grid Decarbonization LEAP Scenarios" onerror="this.style.display='none'; this.parentElement.innerHTML='Save LEAP diagram as<br><code>assets/project2_leap.png</code>';" />
+          <img src="assets/project2_temp.png" alt="NYS Grid Decarbonization LEAP Scenarios" onerror="this.style.display='none'; this.parentElement.innerHTML='Save LEAP diagram as<br><code>assets/project2_leap.png</code>';" />
         </div>
         <div class="project-content">
           <!--[cite: 81] -->
-          <div class="project-meta">Regional Grid &amp; Policy Planning &bull; Co-Lead Researcher</div>
-          <h3>NYS Grid Decarbonization Under Emerging Load: LEAP Scenario Assessment of CLCPA Feasibility</h3>
+          <div class="project-meta">Regional Grid &amp; Policy Planning &bull; Course Project</div>
+          <h3>NYS Grid Decarbonization Under Emerging Load</h3>
           <!--[cite: 81] -->
           <p>
-            New York State's Climate Leadership and Community Protection Act (CLCPA) mandates 70% renewable electricity by 2030 and a 60% emissions reduction by 2040. However, rapid growth in inflexible 24/7 data center loads is colliding with building heat pump and electric vehicle adoption, threatening both clean energy mandates and winter peak reliability.
+            New York's CLCPA sets a 70% renewable electricity target for 2030 and 605 reduction of GHG emissions by 2040 (from 1990 levels). Large data center loads, building heat pumps, and EVs may strain both.
           </p>
           <!--[cite: 81] -->
           <p>
-            I co-designed this macro-energy scenario modeling study in LEAP (base year 2023), integrating NYISO zonal load baselines and interconnection queues, NYSERDA renewable pipelines, NYC Local Law 84 monthly building benchmarking, U.S. EIA sector fuel trajectories, and NREL ATB technology cost curves. Across five scenarios (<em>Baseline, Data Center Growth, High Electrification, Accelerated Renewables,</em> and <em>Integrated Mitigation</em>), the model evaluates generation mix shifts, winter installed reserve margins, 100-year GWP, and the marginal system cost of data center integration.
+            I am co-designing a LEAP scenario study asking whether the mandates remain feasible. Inputs include NYISO zonal loads and queues, the NYSERDA renewable pipeline, NYC Local Law 84 building benchmarking, EIA end-use demand and fuel prices, and NREL ATB costs. Five scenarios (<em>Baseline, Data Center Growth, High Electrification, Accelerated Renewables,</em> and <em>Integrated Mitigation</em>) will be compared on generation mix, winter reserve marin, 100-year GWP, and marginal cost of data center integration.
           </p>
           <div class="tags">
             <span class="tag">LEAP</span>
@@ -502,15 +500,15 @@
         </div>
         <div class="project-content">
           <!--[cite: 1, 2, 10] -->
-          <div class="project-meta">Institutional Governance &bull; First Author &amp; System Architect</div>
+          <div class="project-meta">Institutional Governance &bull; First Author</div>
           <h3>AI-Enabled Sustainability Auditing: A Dual-Corpus RAG-LLM Framework in the Energy Sector</h3>
           <!--[cite: 2, 4, 5, 10, 12, 13, 14, 15, 16, 25] -->
           <p>
-            Manual ESG assurance is slow and vulnerable to inter-rater variance, whereas standalone LLMs suffer from parametric hallucinations that undermine audit traceability. As first author, I architected a six-layer, dual-corpus Retrieval-Augmented Generation (RAG) framework to audit 732 sustainability reports from 99 global oil and gas firms (2014–2023) against 16 qualitative indicators in the GRI 11 Oil and Gas Sector Standard. The system parses PDFs into hierarchical JSON via <code>Docling</code>, embeds 256-token sentence chunks (20-token overlap) using <code>stella_en_1.5B_v5</code>, and performs adaptive neighbor context expansion ($E_i = \{c_{i-w}, \dots, c_{i+w}\}$).
+            Manual ESG assurance is slow and prone to inter-rater variance, while standalone LLMs hallucinate in ways that undermine audit traceability. I led the design of a six-layer, dual-corpus Retrieval-Augmented Generation (RAG) framework that audits sustainability reports against the GRI 11 Oil and Gas Sector Standard, and directed its implementation with a team of M.Eng students. The pipeline parses PDFs with <code>Docling</code>, embeds 256-token sentence chunks with <code>stella_en_1.5B_v5</code>, and expands retrieved chunks with adaptive neighboring context.
           </p>
           <!--[cite: 2, 4, 5, 17, 18, 20, 21, 23] -->
           <p>
-            To guarantee verifiable attribution, I formulated an evidence-constrained 0–5 ordinal scoring specification paired with a deterministic post-generation citation validator that zeroes out unsupported claims, benchmarked via Recall@K, MRR@K, LLM-as-a-Judge (Relevance, Faithfulness, Alignment), and Negative Rejection Rate. Empirical audits expose widespread "rhetorical decoupling" between corporate climate narratives and verifiable KPIs.
+            Scoring uses an evidence-constrained 0–5 rubric, and a deterministic validator zeroes any score without valid citations. Evaluation combines retrieval and generation metrics (Recall, Effective Information Rate, Completeness, Hallucination, Irrelevancy). The target corpus is 732 reports from 99 energy firms (2014-2023).
           </p>
           <div class="tags">
             <span class="tag">RAG &amp; LLMs</span>
@@ -528,15 +526,15 @@
         </div>
         <div class="project-content">
           <!--[cite: 82] -->
-          <div class="project-meta">Spatial &amp; Physical Ground-Truthing &bull; Sole Author</div>
-          <h3>Environmental Audit of Shale Gas Infrastructure: A Multi-County Study in Pennsylvania</h3>
+          <div class="project-meta">Spatial Ground Truth &bull; Class Project</div>
+          <h3>Environmental Audit of Shale Gas Infrastructure in Pennsylvania</h3>
           <!--[cite: 82, 83, 84, 85, 96] -->
           <p>
-            Complementing corporate text auditing with physical ground-truthing, I conducted a spatiotemporal remote sensing audit of unconventional Marcellus Shale natural gas infrastructure across Washington, Bradford, and Susquehanna counties in Pennsylvania. Using Google Earth Engine, I processed a 23-year summer baseline (2003–2025) of 30m Landsat 5/9 surface reflectance and thermal imagery to compute long-term vegetation ($\Delta\text{NDVI}$) and land surface temperature ($\Delta\text{LST}$) shifts.
+            I used Google Earth Engine to build summer Landsat composites for 2003-05 and 2023-25 and computed vegetation ($\Delta\text{NDVI}$) and land surface temperature ($\Delta\text{LST}$) change.
           </p>
           <!--[cite: 82, 84, 85] -->
           <p>
-            Integrating geospatial records for 6,455 unconventional wells and 127 local pipelines in QGIS and ArcGIS Pro with USGS NLCD 2021 binary forest masks and 60m concentric Euclidean buffers (0–300m), the analysis revealed acute forest degradation within 60m of well pads ($\Delta\text{NDVI}$ of $-0.21\text{ to }-0.24$) and contrasting logarithmic recovery trajectories between legacy production zones and newer drilling frontiers.
+            I linked these to 6,455 unconventional wells and 127 pipelines across Washington, Bradford, and Susquehanna counties using QGIS, ArcGIS Pro, with USGS NLCD 2021 binary forest masks and 60m concentric Euclidean buffers (0–300m). Within 60m of well pads, mean $\Delta\text{NDVI}$ fell to about $-0.21\text{ to }-0.24$). Recovery with distance was faster in the legacy county than in newer drilling areas.
           </p>
           <div class="tags">
             <span class="tag">Google Earth Engine</span>
