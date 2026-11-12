@@ -207,6 +207,21 @@
       object-fit: cover;
     }
 
+    .profile-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 210px;
+    }
+
+    .profile-caption {
+      margin-top: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.35;
+    }
+
     /* 3-Column Research Pillars */
     .pillars-grid {
       display: grid;
@@ -348,8 +363,11 @@
       .hero {
         grid-template-columns: 1fr;
       }
-      .profile-frame {
+      .profile-wrapper {
         order: -1;
+        width: 160px;
+      }
+      .profile-frame {
         width: 160px;
         height: 185px;
       }
@@ -415,9 +433,14 @@
         </div>
       </div>
 
-      <div class="profile-frame">
-        <img src="assets/profile_jeju.jpg" alt="Kangmin Cho" onerror="this.style.display='none'; this.parentElement.innerHTML='Upload headshot to<br><code>assets/profile.jpg</code>';" />
-      </div>
+      <figure class="profile-wrapper">
+        <div class="profile-frame">
+          <img src="assets/profile_jeju.jpg" alt="Kangmin Cho at Jeju Hanlim Offshore Wind Farm" onerror="this.style.display='none'; this.parentElement.innerHTML='Upload headshot to<br><code>assets/profile.jpg</code>';" />
+        </div>
+        <figcaption class="profile-caption">
+          Jeju Hanlim Offshore Wind Farm, Jeju Island, South Korea
+        </figcaption>
+      </figure>
     </section>
 
     <!-- Research Pillars -->
